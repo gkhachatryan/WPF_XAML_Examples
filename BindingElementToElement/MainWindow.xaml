@@ -1,0 +1,39 @@
+﻿<Window x:Class="BindingElementToElement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+  
+        <StackPanel Margin="3">
+
+        <Slider Name="sliderFontSize" Margin="3"
+                Minimum="1" Maximum="40" 
+                Value="10" TickFrequency="1"
+                IsSnapToTickEnabled="True" TickPlacement="TopLeft">
+            </Slider>
+            
+         <TextBlock Margin="10" Name="SampleText"
+           FontSize="{Binding ElementName=sliderFontSize, Path=Value, Mode=TwoWay}"
+           Text="Hello!!!"
+           Foreground="DarkSlateGray">
+         </TextBlock>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Margin="3" Padding="2"  Click="Small_buttonclick">Small</Button>
+                 <Button Margin="3" Padding="2"  Click="Middle_buttonclick">Middle</Button>
+                 <Button Margin="3" Padding="2"  Click="Large_buttonclick">Large</Button>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Label VerticalAlignment="Center" xml:space="preserve"> Exact Size: </Label>
+                <TextBox Text="{Binding ElementName=SampleText, 
+                         Path=FontSize, 
+                         UpdateSourceTrigger=LostFocus, 
+                         Mode=TwoWay}" 
+                         Width="50">
+                    
+                </TextBox>
+            </StackPanel>
+
+        </StackPanel>
+   
+</Window>
