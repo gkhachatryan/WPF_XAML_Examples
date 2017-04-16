@@ -1,0 +1,20 @@
+﻿<Window x:Class="UsingCollections.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Collection Binding" Height="350" Width="525">
+    <Grid>
+        <StackPanel Margin="2">
+            
+            <ListBox Name="listboxname" Margin="20"></ListBox>
+
+            <Button Name="buttonname" Margin="20"
+                    Width="70"
+                    Height="25"
+                    Background="Gainsboro"
+                    FontStyle="Italic"
+                    FontSize="15"
+                    Foreground="DarkBlue" Click="buttonname_Click">Add</Button>
+        </StackPanel>
+        
+    </Grid>
+</Window>
